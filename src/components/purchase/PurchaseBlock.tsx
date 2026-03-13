@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 export default function PurchaseBlock() {
   const [checked, setChecked] = useState(false);
@@ -14,12 +16,22 @@ export default function PurchaseBlock() {
 
     setError(false);
 
-    alert("Покупка выполнена");
+    toast.success("Покупка выполнена", {
+      className: `
+    text-white
+    rounded-2xl
+    px-5
+    py-3
+    shadow-xl
+    border
+    border-neutral-700
+    backdrop-blur
+  `,
+    });
   };
 
   return (
     <div className="mt-3 xs:mt-5 xl:mt-7 flex flex-col items-start gap-5 xl:gap-4">
-
       <label className="flex items-center gap-2 text-sm cursor-pointer  max-w-[600px]">
         <input
           type="checkbox"
@@ -37,20 +49,20 @@ export default function PurchaseBlock() {
             setError(false);
           }}
           className={`
-      w-15
-      xs:w-12
-      xl:w-10 
-      h-8 
-      border-2
-      border-[rgba(96,101,102,1)]
-      rounded
-      flex
-      items-center
-      justify-center
-      cursor-pointer
-      transition-all
-      ${error ? "border-red-500" : ""}
-    `}
+  w-15
+  xs:w-12
+  xl:w-10 
+  h-8
+  border-2
+  border-[rgba(96,101,102,1)]
+  rounded
+  flex
+  items-center
+  justify-center
+  cursor-pointer
+  transition
+  ${error ? "ring-1 ring-red-500 border-none" : ""}
+`}
         >
           {checked && (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -68,7 +80,7 @@ export default function PurchaseBlock() {
         <span
           className={
             error
-              ? "text-red-500"
+              ? "text-red-500 font-normal  text-base text-[12px] xl:text-[16px]   leading-[110%]"
               : "text-[rgba(205,205,205,1)] font-normal  text-base text-[12px] xl:text-[16px]   leading-[110%]"
           }
         >
@@ -78,9 +90,9 @@ export default function PurchaseBlock() {
         </span>
       </label>
 
-<button
-  onClick={handleBuy}
-  className="
+      <button
+        onClick={handleBuy}
+        className="
   px-28
     xs:px-34
     py-4
@@ -98,9 +110,9 @@ export default function PurchaseBlock() {
     hover:bg-orange-600
     transition
   "
->
-  Купить
-</button>
+      >
+        Купить
+      </button>
       <p className=" font-normal text-[10px] xl:text-[14px] leading-[120%]  align-bottom text-[rgba(155,155,155,1)]">
         Нажимая кнопку «Купить», Пользователь соглашается на разовое списание
         денежных средств для получения пожизненного доступа к приложению.
@@ -108,6 +120,8 @@ export default function PurchaseBlock() {
         сохранены для осуществления покупок дополнительных услуг сервиса в
         случае желания пользователя.
       </p>
+
+      <Toaster position="top-center" />
     </div>
   );
 }
