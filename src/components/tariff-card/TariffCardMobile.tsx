@@ -54,7 +54,7 @@ export default function TariffCardMobile({
         {tariff.period}
       </div>
 
-      <div className="flex justify-between items-start gap-6">
+      <div className="flex justify-between items-start gap-6 pr-2">
         <div className="flex flex-col items-end">
           <div
             className={`font-semibold leading-[120%] text-[30px] xs:text-[34px] whitespace-nowrap ${

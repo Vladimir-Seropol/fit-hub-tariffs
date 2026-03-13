@@ -7,6 +7,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function TariffCardBest({
   tariff,
+  selected,
   onSelect,
   showDiscount,
 }: TariffCardProps) {
@@ -25,12 +26,14 @@ export default function TariffCardBest({
   return (
     <div
       onClick={() => onSelect(tariff.uuid)}
-      className="
+      className={`
       relative
       h-full
-      w-full
+      
+      xs:w-full
       cursor-pointer
-      rounded-4xl
+      rounded-3xl
+      xl:rounded-4xl
       border
       pt-2
       xs:pt-4
@@ -45,10 +48,9 @@ export default function TariffCardBest({
       duration-200
       bg-[rgba(45,50,51,1)]
       hover:scale-[1.02]
-      border-[#fdb056]
       md:col-span-3
       md:p-6
-      "
+      ${selected ? "border-[#fdb056] shadow-lg" : "border-neutral-700"}`}
     >
       {discountVisible && (
         <div className="absolute top-0 xl:left-[50px] right-[60px] w-[42px] h-[23px] xs:w-[51px] xs:h-[27px] xl:w-16 xl:h-10 bg-[rgba(253,86,86,1)] text-white px-2 py-1 rounded flex items-center justify-center">
@@ -62,9 +64,9 @@ export default function TariffCardBest({
         {tariff.period}
       </div>
 
-      <div className="flex justify-between gap-10 mt-3 xl:pl-24">
+      <div className="flex justify-between gap-4 xs:gap-10 mt-3 xl:pl-[100px]">
         <div className="absolute top-0 xl:top-2 right-1 xl:right-2 px-3 py-1 rounded-full text-[rgba(253,176,86,1)]">
-          <span className="text-[13px] xs:text-[14px] xl:text-[20px] leading-[130%] tracking-[3%]">
+          <span className="text-[12px] xs:text-[14px] xl:text-[20px] leading-[130%] tracking-[3%]">
             ХИТ!
           </span>
         </div>
@@ -81,7 +83,7 @@ export default function TariffCardBest({
           )}
         </div>
 
-        <p className="text-[16px] leading-[130%] text-[rgba(255,255,255,1)] font-normal">
+        <p className="text-[14px] leading-[130%] text-[rgba(255,255,255,1)] font-normal">
           {truncatedText}
         </p>
       </div>

@@ -30,9 +30,8 @@ export default function TariffCardRegular({
       duration-200
       bg-[rgba(45,50,51,1)]
       hover:scale-[1.02]
-      border-neutral-700
       w-[240px]
-      ${selected ? "border-orange-500 shadow-lg" : ""}
+      ${selected ? "border-[#fdb056] shadow-lg" : "border-neutral-700"}
       `}
     >
       {discountVisible && (
@@ -59,7 +58,7 @@ export default function TariffCardRegular({
         )}
       </div>
 
-      <p className="font-normal text-[16px] leading-[130%] text-[rgba(255,255,255,1)] mt-12">
+      <p className="font-normal text-[16px] leading-[130%] text-[rgba(255,255,255,1)] mt-10 mb-2">
         {tariff.text}
       </p>
     </div>

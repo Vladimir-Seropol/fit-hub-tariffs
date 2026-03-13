@@ -109,6 +109,7 @@ export default function PurchaseBlock() {
     animate-pulse
     hover:bg-orange-600
     transition
+    
   "
       >
         Купить
