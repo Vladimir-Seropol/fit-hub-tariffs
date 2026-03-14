@@ -22,7 +22,7 @@ export default function TariffCardRegular({
       w-full
       cursor-pointer
       rounded-4xl
-      border
+      border-2
       pt-[70px]
       px-5
       pb-6
@@ -31,7 +31,7 @@ export default function TariffCardRegular({
       bg-[rgba(45,50,51,1)]
       hover:scale-[1.02]
       w-[240px]
-      ${selected ? "border-[#fdb056] shadow-lg" : "border-neutral-700"}
+      ${selected ? "border-[#fdb056] shadow-lg" : "border-[rgba(72, 77, 78, 1)]"}
       `}
     >
       {discountVisible && (

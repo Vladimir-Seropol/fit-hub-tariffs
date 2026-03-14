@@ -23,7 +23,7 @@ export default function TariffCardMobile({
         w-full
         cursor-pointer
         rounded-[28px]
-        border
+        border-2
         pl-5
         xs:pl-8
         pt-5
@@ -32,8 +32,8 @@ export default function TariffCardMobile({
         bg-[rgba(45,50,51,1)]
         transition
         duration-200
-        ${isBest ? "border-[#fdb056]" : "border-neutral-700"}
-        ${selected ? "border-orange-500 shadow-lg" : ""}
+        ${selected ? " border-[#fdb056]" : "border-[rgba(72, 77, 78, 1)]"}
+        
       `}
     >
       {discountVisible && (
