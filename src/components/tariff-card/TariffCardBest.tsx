@@ -49,7 +49,7 @@ export default function TariffCardBest({
       hover:scale-[1.02]
       md:col-span-3
       md:p-6
-      ${selected ? "border-[#fdb056] shadow-lg" : "border-[rgba(72, 77, 78, 1)]"}`}
+      ${selected ? "border-[#fdb056] shadow-lg" :  "border-[rgba(72,77,78,1)]"}`}
     >
       {discountVisible && (
         <div className="absolute top-0 xl:left-[50px] right-[60px] w-[42px] h-[23px] xs:w-[51px] xs:h-[27px] xl:w-16 xl:h-10 bg-[rgba(253,86,86,1)] text-white px-2 py-1 rounded flex items-center justify-center">

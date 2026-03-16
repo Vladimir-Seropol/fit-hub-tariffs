@@ -14,7 +14,7 @@ export default function Footer() {
     xl:text-[28px]
     leading-[120%]
     text-[rgba(129,254,149,1)]
-    border-1 border-[rgba(129,254,149,1)] py-2 xs:py-3 xl:py-4 px-4 xl:px-8 pb-3 xs:pb-none
+    border border-[rgba(129,254,149,1)] py-2 xs:py-3 xl:py-4 px-4 xl:px-8 pb-3 xs:pb-none
     rounded-[30px]"
         >
           гарантия возврата 30 дней
