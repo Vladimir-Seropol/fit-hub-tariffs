@@ -29,7 +29,6 @@ export default function TariffCardBest({
       className={`
       relative
       h-full
-      
       xs:w-full
       cursor-pointer
       rounded-3xl
@@ -42,7 +41,7 @@ export default function TariffCardBest({
       xs:px-8
       xl:px-5
       pb-[5px]
-      xs:pb-4
+      xs:pb-[12px]
       xl:pb-[24px]
       transition-all
       duration-200

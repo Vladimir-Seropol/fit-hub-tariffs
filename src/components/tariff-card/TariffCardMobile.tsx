@@ -3,9 +3,11 @@
 import { useState } from "react";
 import { TariffCardProps } from "@/types/tariff";
 import { calculateDiscount } from "@/utils/calculateDiscount";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function TariffCardMobile({
   tariff,
+  index,
   selected,
   onSelect,
   showDiscount,
@@ -14,6 +16,18 @@ export default function TariffCardMobile({
   const isBest = tariff.is_best;
 
   const [discountVisible] = useState(() => showDiscount);
+
+  const isSmallScreen = useMediaQuery("(max-width: 375px)");
+
+  const capitalize = (str: string) =>
+    str.charAt(0).toUpperCase() + str.slice(1);
+
+  const isThirdTariff = index === 1;
+
+  const text =
+    isThirdTariff && isSmallScreen
+      ? capitalize(tariff.text.split(" ").slice(1, 4).join(" "))
+      : tariff.text;
 
   return (
     <div
@@ -25,15 +39,14 @@ export default function TariffCardMobile({
         rounded-[28px]
         border-2
         pl-5
-        xs:pl-8
+        xs:pl-7
         pt-5
         pb-4
-        xs:pb-5
+        xs:pb-[22px]
         bg-[rgba(45,50,51,1)]
         transition
         duration-200
-        ${selected ? " border-[#fdb056]" : "border-[rgba(72, 77, 78, 1)]"}
-        
+        ${selected ? "border-[#fdb056]" : "border-[rgba(72,77,78,1)]"}
       `}
     >
       {discountVisible && (
@@ -54,7 +67,7 @@ export default function TariffCardMobile({
         {tariff.period}
       </div>
 
-      <div className="flex justify-between items-start gap-6 pr-2">
+      <div className="flex justify-between items-start gap-12 xs:gap-16 xs:pr-4">
         <div className="flex flex-col items-end">
           <div
             className={`font-semibold leading-[120%] text-[30px] xs:text-[34px] whitespace-nowrap ${
@@ -72,7 +85,7 @@ export default function TariffCardMobile({
         </div>
 
         <p className="text-[14px] leading-[130%] text-white max-w-[170px]">
-          {tariff.text}
+          {text}
         </p>
       </div>
     </div>

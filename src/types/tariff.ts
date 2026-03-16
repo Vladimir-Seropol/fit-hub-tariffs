@@ -14,6 +14,7 @@ export type TariffWithUUID = Tariff & {
 export interface TariffCardProps {
   tariff: TariffWithUUID
   selected: boolean
+  index?: number;
   onSelect: (uuid: string) => void
   showDiscount: boolean
 }

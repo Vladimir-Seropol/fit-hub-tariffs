@@ -9,7 +9,7 @@ export default function Home() {
   const seconds = useTimer(120);
 
   return (
-    <div className="min-h-screen bg-[#1e2426] text-white rounded-[30px]">
+    <div className="min-h-screen bg-[#1e2426] text-white xl:rounded-[30px]">
       <Header seconds={seconds} />
 
       <TariffSection seconds={seconds} />

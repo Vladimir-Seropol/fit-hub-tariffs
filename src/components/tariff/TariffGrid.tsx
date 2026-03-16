@@ -36,8 +36,8 @@ export default function TariffGrid({
       )}
 
       {lastThreeTariffs.length > 0 && (
-        <div className="grid gap-2 xs:gap-3 grid-cols-1 xl:grid-cols-3 mt-2 xl:mt-3">
-          {lastThreeTariffs.map((tariff) => (
+        <div className="grid gap-1 xs:gap-2 grid-cols-1 xl:grid-cols-3 mt-2 xl:mt-3">
+          {lastThreeTariffs.map((tariff, index) => (
             <div key={tariff.uuid} className="w-full h-full">
               <div className="hidden xl:block h-full">
                 <TariffCard
@@ -51,6 +51,7 @@ export default function TariffGrid({
               <div className="xl:hidden">
                 <TariffCardMobile
                   tariff={tariff}
+                  index={index}
                   selected={selectedTariff === tariff.uuid}
                   onSelect={setSelectedTariff}
                   showDiscount={showDiscount}

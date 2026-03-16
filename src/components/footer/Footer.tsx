@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className="max-w-[1216px] px-4 xl:px-0 w-full mx-auto flex flex-col lg:flex-row items-center mt-[14px] xs:mt-[22px] xl:mt-[64px]  pb-[150px]">
+    <footer className="max-w-[1216px] px-4 xl:px-0 w-full mx-auto flex flex-col lg:flex-row items-center mt-[12px] xs:mt-[20px] xl:mt-[64px]  pb-[150px]">
       <div className="text-sm p-3 xl:p-5  border border-[rgba(72,77,78,1)] rounded-[20px] xl:rounded-[35px]">
         <button
           className="
