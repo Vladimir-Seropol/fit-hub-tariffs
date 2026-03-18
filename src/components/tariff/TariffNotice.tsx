@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TariffNotice() {
   return (
-    <div className="flex gap-2 items-start mt-3 xs:mt-2 xl:mt-5 py-3 xl:py-4 px-4 xl:px-5 max-w-[499px] bg-[rgba(45,50,51,1)] rounded-[20px]">
+    <div className="flex gap-2 items-start mt-3 xs:mt-4 xl:mt-5 py-3 xl:py-4 px-4 xl:px-5 max-w-[499px] bg-[rgba(45,50,51,1)] rounded-[20px]">
       <Image 
         src="/alert.png" 
         alt="!" 

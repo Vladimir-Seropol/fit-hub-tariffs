@@ -7,9 +7,7 @@ import TariffCardRegular from "./TariffCardRegular";
 export default function TariffCard(props: TariffCardProps) {
   const { tariff } = props;
 
-  if (tariff.is_best) {
-    return <TariffCardBest {...props} />;
-  }
-
-  return <TariffCardRegular {...props} />;
+  return tariff.is_best
+    ? <TariffCardBest {...props} />
+    : <TariffCardRegular {...props} />;
 }

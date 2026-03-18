@@ -29,12 +29,12 @@ export default function TariffSection({ seconds }: Props) {
   return (
     <main className="max-w-[1216px] w-full mx-auto px-4 xl:px-0 flex flex-col xl:flex-row items-center xl:gap-19 relative pt-[70px] xl:pt-[204px]">
 
-      <h1 className="absolute top-5 left-4 xl:left-0 xl:top-13 text-[22px] xs:text-[24px] xl:text-[40px] font-bold leading-[110%]">
+      <h1 className="absolute top-5 left-4 xl:left-0 xl:top-13 text-[22px] xs:text-[24px] xl:text-[40px] font-bold leading-[110%] pr-8">
         Выбери подходящий для себя{" "}
         <span className="text-orange-500">тариф</span>
       </h1>
 
-      <div className="flex-shrink-0 lg:flex xl:order-[-1] items-center justify-center mt-5 w-full max-w-[390px]">
+      <div className="flex-shrink-0 lg:flex xl:order-[-1] items-center justify-center mt-5 xl:mt-4 w-full max-w-[390px]">
 
         <Image
           src="/man.png"
@@ -62,7 +62,7 @@ export default function TariffSection({ seconds }: Props) {
 
       </div>
 
-      <div className="flex-1">
+      <div className="flex-1 max-w-[288px] xs:max-w-none">
         {error && <div className="text-red-500 mb-4">{error}</div>}
 
         {loading ? (

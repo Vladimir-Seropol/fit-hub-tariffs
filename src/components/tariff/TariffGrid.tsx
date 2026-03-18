@@ -1,8 +1,9 @@
 "use client";
 
 import TariffCard from "@/components/tariff-card/TariffCard";
-import TariffCardMobile from "@/components/tariff-card/TariffCardMobile";
 import { TariffWithUUID } from "@/types/tariff";
+import { useState } from "react";
+import { mapTariffs } from "@/utils/mapTariffs";
 
 type Props = {
   mainTariffs: TariffWithUUID[];
@@ -15,49 +16,45 @@ type Props = {
 export default function TariffGrid({
   mainTariffs,
   lastThreeTariffs,
-  selectedTariff,
-  setSelectedTariff,
   showDiscount,
 }: Props) {
+
+const mappedMainTariffs = mapTariffs(mainTariffs);
+const mappedLastThreeTariffs = mapTariffs(lastThreeTariffs);
+
+const [selectedTariff, setSelectedTariff] = useState<string | null>(
+  mappedMainTariffs[0]?.uuid ?? null
+);
+
+  const isSelected = (uuid: string) => selectedTariff === uuid;
+
   return (
     <>
-      {mainTariffs.length > 0 && (
+      {mappedMainTariffs.length > 0 && (
         <div className="grid gap-3 grid-cols-1 lg:grid-cols-3">
-          {mainTariffs.map((tariff) => (
+          {mappedMainTariffs.map((tariff, index) => (
             <TariffCard
               key={tariff.uuid}
               tariff={tariff}
-              selected={selectedTariff === tariff.uuid}
+              selected={isSelected(tariff.uuid)}
               onSelect={setSelectedTariff}
               showDiscount={showDiscount}
+              className={index === 0 ? "xl:col-span-3" : ""}
             />
           ))}
         </div>
       )}
 
-      {lastThreeTariffs.length > 0 && (
-        <div className="grid gap-1 xs:gap-2 grid-cols-1 xl:grid-cols-3 mt-2 xl:mt-3">
-          {lastThreeTariffs.map((tariff, index) => (
-            <div key={tariff.uuid} className="w-full h-full">
-              <div className="hidden xl:block h-full">
-                <TariffCard
-                  tariff={tariff}
-                  selected={selectedTariff === tariff.uuid}
-                  onSelect={setSelectedTariff}
-                  showDiscount={showDiscount}
-                />
-              </div>
-
-              <div className="xl:hidden">
-                <TariffCardMobile
-                  tariff={tariff}
-                  index={index}
-                  selected={selectedTariff === tariff.uuid}
-                  onSelect={setSelectedTariff}
-                  showDiscount={showDiscount}
-                />
-              </div>
-            </div>
+      {mappedLastThreeTariffs.length > 0 && (
+        <div className="grid gap-1 xs:gap-2 xl:gap-3 grid-cols-1 xl:grid-cols-3 mt-2 xl:mt-3">
+          {mappedLastThreeTariffs.map((tariff) => (
+            <TariffCard
+              key={tariff.uuid}
+              tariff={tariff}
+              selected={isSelected(tariff.uuid)}
+              onSelect={setSelectedTariff}
+              showDiscount={showDiscount}
+            />
           ))}
         </div>
       )}
