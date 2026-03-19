@@ -39,7 +39,7 @@ const [selectedTariff, setSelectedTariff] = useState<string | null>(
               selected={isSelected(tariff.uuid)}
               onSelect={setSelectedTariff}
               showDiscount={showDiscount}
-              className={index === 0 ? "xl:col-span-3" : ""}
+              className={index === 0 ? "lg:col-span-3 xl:col-span-3" : ""}
             />
           ))}
         </div>
