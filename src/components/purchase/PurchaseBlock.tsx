@@ -114,7 +114,7 @@ export default function PurchaseBlock() {
       >
         Купить
       </button>
-      <p className=" font-normal text-[10px] xl:text-[14px] leading-[120%]  align-bottom text-[rgba(155,155,155,1)]">
+      <p className=" font-normal text-[10px] xl:text-sm leading-[120%]  align-bottom text-[rgba(155,155,155,1)]">
         Нажимая кнопку «Купить», Пользователь соглашается на разовое списание
         денежных средств для получения пожизненного доступа к приложению.
         Пользователь соглашается, что данные кредитной/дебетовой карты будут

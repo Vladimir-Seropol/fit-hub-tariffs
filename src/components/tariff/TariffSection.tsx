@@ -31,36 +31,34 @@ export default function TariffSection({ seconds }: Props) {
 
       <h1 className="absolute top-5 left-4 xl:left-0 xl:top-13 text-[22px] xs:text-[24px] xl:text-[40px] font-bold leading-[110%] pr-8">
         Выбери подходящий для себя{" "}
-        <span className="text-orange-500">тариф</span>
+        <span className="text-card-accent">тариф</span>
       </h1>
 
+   
+
       <div className="flex-shrink-0 lg:flex xl:order-[-1] items-center justify-center mt-5 xl:mt-4 w-full max-w-[390px]">
+  <picture>
 
-        <Image
-          src="/man.png"
-          alt="man"
-          width={390}
-          height={390}
-          className="hidden xl:block w-full h-auto object-contain"
-        />
+    <source
+      media="(min-width: 1280px)"
+      srcSet="/man.png"
+    />
 
-        <Image
-          src="/man375.png"
-          alt="man"
-          width={124}
-          height={250}
-          className="hidden min-[375px]:block xl:hidden max-w-[124px] w-full h-auto object-contain mx-auto"
-        />
+    <source
+      media="(min-width: 375px)"
+      srcSet="/man375.png"
+    />
 
-        <Image
-          src="/man320.png"
-          alt="man"
-          width={100}
-          height={200}
-          className="block min-[375px]:hidden max-w-[100px] w-full h-auto object-contain mx-auto"
-        />
-
-      </div>
+    <Image
+      src="/man320.png"
+      alt="man"
+      width={100}
+      height={200}
+      className="w-full max-w-[100px] xl:max-w-[390px] min-[375px]:max-w-[124px] h-auto object-contain mx-auto"
+      priority
+    />
+  </picture>
+</div>
 
       <div className="flex-1 max-w-[288px] xs:max-w-none">
         {error && <div className="text-red-500 mb-4">{error}</div>}

@@ -22,10 +22,10 @@ export default function TariffCardRegular({
         transition
         duration-200
         border-2
-        ${selected ? "border-[#fdb056] shadow-lg" : "border-[rgba(72,77,78,1)]"}
+        ${selected ? "border-card-accent shadow-lg" : "border-card-border"}
         rounded-2xl
         xl:rounded-[40px]
-        bg-[rgba(45,50,51,1)]
+        bg-card-bg
       `}
     >
       {/* ================= DESKTOP ================= */}
@@ -68,13 +68,13 @@ export default function TariffCardRegular({
               {tariff.price} ₽
             </div>
             {discountVisible && (
-              <div className="text-[14px] leading-[20%] text-[#919191] line-through">
+              <div className="text-sm leading-[20%] text-[#919191] line-through">
                 {tariff.full_price} ₽
               </div>
             )}
           </div>
 
-          <p className="text-[14px] leading-4 text-white max-w-[170px]">
+          <p className="text-sm leading-4 text-white max-w-[170px]">
             <span className="xl:hidden">{tariff.mobileText}</span>
             <span className="hidden xl:inline">{tariff.text}</span>
           </p>

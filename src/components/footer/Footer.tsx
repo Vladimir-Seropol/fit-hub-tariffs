@@ -3,7 +3,7 @@
 export default function Footer() {
   return (
     <footer className="max-w-[1216px] px-4 xl:px-0 w-full mx-auto flex flex-col lg:flex-row items-center mt-[12px] xs:mt-[20px] xl:mt-[64px]  pb-[150px]">
-      <div className="text-sm p-3 xl:p-5  border border-[rgba(72,77,78,1)] rounded-[20px] xl:rounded-[35px]">
+      <div className="text-sm p-3 xl:p-5  border border-card-border rounded-[20px] xl:rounded-[35px]">
         <button
           className="
     font-medium
@@ -19,7 +19,7 @@ export default function Footer() {
         >
           гарантия возврата 30 дней
         </button>
-         <p className=" font-normal text-[13px] xs:text-[14px] xl:text-[24px] leading-[130%] tracking-[0px] text-[rgba(220,220,220,1)]">
+         <p className=" font-normal text-[13px] xs:text-sm xl:text-[24px] leading-[130%] tracking-[0px] text-[rgba(220,220,220,1)]">
           Мы уверены, что наш план сработает для тебя и ты увидишь видимые
           результаты уже через 4 недели! Мы даже готовы полностью вернуть твои
           деньги в течение 30 дней с момента покупки, если ты не получишь

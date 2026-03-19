@@ -7,12 +7,13 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '375px', 
+        xs: "375px",
       },
       fontFamily: {
-        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
+     
     },
   },
   plugins: [],
-}
+};

@@ -13,7 +13,7 @@ export default function Header({ seconds }: Props) {
         <p
           className="
             font-semibold
-            text-[14px] xs:text-[18px] xl:text-[24px]
+            text-sm xs:text-[18px] xl:text-[24px]
             leading-[130%]
             text-center
           "

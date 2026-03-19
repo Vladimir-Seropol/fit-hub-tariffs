@@ -27,11 +27,11 @@ export default function TariffCardBest({
         h-full
         w-full
         cursor-pointer
-        transition-all
+        transition-transform
         duration-200
-        bg-[rgba(45,50,51,1)]
+        bg-card-bg
         border-2
-        ${selected ? "border-[#fdb056]" : "border-[rgba(72,77,78,1)]"}
+        ${selected ? "border-card-accent" : "border-card-border"}
         rounded-2xl
         xl:rounded-4xl
         ${className}
@@ -45,15 +45,15 @@ export default function TariffCardBest({
           </div>
         )}
 
-        <div className="absolute top-2 right-2 px-3 py-1 text-[#fdb056] text-[18px] font-semibold">
+        <div className="absolute top-2 right-2 px-3 py-1 text-card-accent text-[18px] font-semibold">
           ХИТ!
         </div>
 
         <div className="text-[26px]  ml-31">{tariff.period}</div>
 
-        <div className="flex justify-and gap-12 pl-[100px]">
-          <div className="flex flex-col items-end-safe">
-            <div className="text-[50px]  text-[#fdb056] whitespace-nowrap">
+        <div className="flex  gap-12 pl-[100px]">
+          <div className="flex flex-col items-end">
+            <div className="text-[50px]  text-card-accent whitespace-nowrap">
               {tariff.price} ₽
             </div>
             {discountVisible && (
@@ -63,7 +63,7 @@ export default function TariffCardBest({
             )}
           </div>
 
-          <p className="text-[14px] text-white">{tariff.text}</p>
+          <p className="text-sm text-white">{tariff.text}</p>
         </div>
       </div>
 
@@ -75,7 +75,7 @@ export default function TariffCardBest({
           </div>
         )}
 
-        <div className="absolute top-[-5px] right-8 translate-x-[50%] translate-y-[50%] text-[#fdb056] text-[10px] xs:text-[13px] font-semibold">
+        <div className="absolute top-[-5px] right-8 translate-x-[50%] translate-y-[50%] text-card-accent text-[10px] xs:text-[13px] font-semibold">
           ХИТ!
         </div>
 
@@ -83,17 +83,17 @@ export default function TariffCardBest({
 
         <div className="flex justify-between gap-[34px] xs:gap-14 pr-2">
           <div className="flex flex-col items-end">
-            <div className="text-[30px] xs:text-[34px] text-[#fdb056] whitespace-nowrap">
+            <div className="text-[30px] xs:text-[34px] text-card-accent whitespace-nowrap">
               {tariff.price} ₽
             </div>
             {discountVisible && (
-              <div className="text-[14px] leading-[20%] text-[#919191] line-through">
+              <div className="text-sm leading-[20%] text-[#919191] line-through">
                 {tariff.full_price} ₽
               </div>
             )}
           </div>
 
-          <p className="text-[14px] leading-4 text-white max-w-[170px]">{mobileText}</p>
+          <p className="text-sm leading-4 text-white max-w-[170px]">{mobileText}</p>
         </div>
       </div>
     </div>
