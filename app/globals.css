@@ -1,15 +1,13 @@
 @import "tailwindcss";
 
+
 @theme {
   --breakpoint-xs: 375px;
   --color-card-bg: #2D3233;
   --color-card-border: #484D4E;
   --color-card-accent: #FDB056;
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 :root {
@@ -28,4 +26,17 @@ body {
   font-family: var(--font-montserrat), sans-serif;
   background: var(--background);
   color: var(--foreground);
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 0.8s infinite;
 }
