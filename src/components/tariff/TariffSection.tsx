@@ -13,8 +13,9 @@ type Props = {
 
 export default function TariffSection({ seconds }: Props) {
   const showDiscount = seconds > 0;
+  
 
-  const { tariffs, selectedTariff, setSelectedTariff, loading, error } =
+  const { tariffs, selectedTariff, setSelectedTariff, isLoading, isError,error } =
     useTariffs();
 
   const sortedTariffs = [...tariffs].sort((a, b) => {
@@ -33,8 +34,10 @@ export default function TariffSection({ seconds }: Props) {
         <span className="text-card-accent">тариф</span>
       </h1>
 
-      <div className=" flex-shrink-0 lg:flex xl:order-[-1] justify-center items-center mx-auto
-       mt-5 xl:mt-4 w-full max-w-[390px]">
+      <div
+        className=" flex-shrink-0 lg:flex xl:order-[-1] justify-center items-center mx-auto
+       mt-5 xl:mt-4 w-full max-w-[390px]"
+      >
         <picture>
           <source media="(min-width: 1280px)" srcSet="/man.png" />
 
@@ -52,9 +55,14 @@ export default function TariffSection({ seconds }: Props) {
       </div>
 
       <div className="flex-1  xs:max-w-none">
-        {error && <div className="text-red-500 mb-4">{error}</div>}
+        {isError && error && (
+          <div className="mb-4 p-4 rounded-lg bg-red-50 text-red-600 border border-red-200">
+            <p className="font-semibold">Ошибка загрузки</p>
+            <p className="text-sm">{error.message}</p>
+          </div>
+        )}
 
-        {loading ? (
+        {isLoading ? (
           <>
             <div className="hidden xl:grid gap-3 grid-cols-1 lg:grid-cols-3 ">
               {/* BEST */}
@@ -66,7 +74,7 @@ export default function TariffSection({ seconds }: Props) {
               <SkeletonCard />
             </div>
 
-            {/* LAST THREE */}
+            {/* MOBILE */}
             <div className="w-full max-w-none grid gap-1 xs:gap-2 xl:gap-3 grid-cols-1 xl:grid-cols-3 mt-2 xl:mt-3 xl:hidden">
               <SkeletonCard />
               <SkeletonCard />

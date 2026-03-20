@@ -1,16 +1,13 @@
-import { Tariff } from "@/types/tariff"
+import { Tariff } from "@/types/tariff";
 
 export async function getTariffs(): Promise<Tariff[]> {
   const res = await fetch(
-    "https://t-core.fit-hub.pro/Test/GetTariffs",
-    {
-      cache: "no-store",
-    }
-  )
+    "https://t-core.fit-hub.pro/Test/GetTariffs"
+  );
 
   if (!res.ok) {
-    throw new Error("Не удалось загрузить тарифы")
+    throw new Error("Не удалось загрузить тарифы");
   }
 
-  return res.json()
+  return res.json();
 }
